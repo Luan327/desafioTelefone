@@ -3,7 +3,7 @@ def relatorio(matriz_cliente, tipo_assinatura):
     for cliente in matriz_cliente:
         valor_conta = calculo_conta(cliente[2], cliente[3], tipo_assinatura)
         print(
-            f"Nome: {cliente[0]}, {cliente[1]}, Tipo {cliente[2]}, Minutos: {cliente[3]}, Conta = R$ {valor_conta:.2f}"
+            f"{cliente[0]}, {cliente[1]}, Tipo {cliente[2]}, Minutos: {cliente[3]}, Conta = R$ {valor_conta:.2f}"
         )
 def calculo_conta(tipo_conta, minutos_utilizados, tipo_assinatura):
     # se minutos consumidos <- 90 == preço Basico
@@ -23,10 +23,9 @@ def cadastrar_clientes(quantidade_clientes):
         nome = input("Nome: ")
         telefone = input("Telefone: ")
         tipo_conta = int(input("Tipo de conta (0,1 ou 2): "))
-        
+
         while tipo_conta != 0 and tipo_conta != 1 and tipo_conta != 2:
-            print("Tipo da conta invalido, Digite ( 0,1 ou 2: )")
-            tipo_conta = input()
+            tipo_conta = int(input("Tipo da conta invalido, Digite ( 0,1 ou 2): "))
 
         minutos = int(input("Minutos: "))
         print()
